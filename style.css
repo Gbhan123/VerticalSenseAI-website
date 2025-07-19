@@ -253,15 +253,6 @@ p {
     text-align: center;           /* Center-align text inside the rows */
 }
 
-<!--
-.hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
--->
-
 .hero-title {
     font-size: 3.5rem;
     font-weight: 800;
