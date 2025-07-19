@@ -247,10 +247,9 @@ p {
 
 .hero-content {
     display: grid;
-    grid-template-rows: auto auto; /* Two rows with automatic height */
-    gap: 2rem;                     /* Vertical space between the rows */
-    justify-items: center;        /* Horizontally center the content */
-    text-align: center;           /* Center-align text inside the rows */
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
 }
 
 .hero-title {
