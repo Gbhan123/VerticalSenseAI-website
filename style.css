@@ -235,7 +235,7 @@ p {
 /* Hero Section */
 .hero {
     padding: 8rem 0 5rem;
-    max-height: 400px;
+    max-height: 600px;
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(243, 244, 246, 0.5) 100%);
     overflow: hidden;
 }
@@ -255,14 +255,14 @@ p {
 
 .hero-title {
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     animation: fadeIn 1s ease-out;
 }
 
 .hero-description {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--text-secondary);
     margin-bottom: 2rem;
     line-height: 1.8;
