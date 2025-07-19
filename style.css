@@ -235,7 +235,7 @@ p {
 /* Hero Section */
 .hero {
     padding: 8rem 0 5rem;
-    max-height: 600px;
+    max-height: 1000px;
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(243, 244, 246, 0.5) 100%);
     overflow: hidden;
 }
