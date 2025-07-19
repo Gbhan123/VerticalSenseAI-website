@@ -254,14 +254,14 @@ p {
 
 .hero-title {
     font-size: 3.5rem;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     animation: fadeIn 1s ease-out;
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--text-secondary);
     margin-bottom: 2rem;
     line-height: 1.8;
