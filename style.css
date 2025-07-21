@@ -234,7 +234,7 @@ p {
 
 /* Hero Section */
 .hero {
-    padding: 8rem 0 5rem;
+    padding: 4rem 0 3rem;
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(243, 244, 246, 0.5) 100%);
     overflow: hidden;
 }
