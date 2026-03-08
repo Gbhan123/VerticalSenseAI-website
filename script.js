@@ -34,14 +34,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect
+// Navbar scroll effect with enhanced glassmorphism
 window.addEventListener('scroll', function() {
     const nav = document.querySelector('.nav');
-    if (window.scrollY > 50) {
-        nav.style.background = 'rgba(255, 255, 255, 0.95)';
-        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    const scrolled = window.scrollY;
+    const scrollFactor = Math.min(scrolled / 100, 1);
+
+    if (scrolled > 50) {
+        const blurAmount = 20 + (scrollFactor * 10);
+        nav.style.background = `rgba(255, 255, 255, ${0.75 + scrollFactor * 0.2})`;
+        nav.style.backdropFilter = `blur(${blurAmount}px)`;
+        nav.style.boxShadow = `0 2px ${20 + scrollFactor * 10}px rgba(59, 130, 246, ${0.08 + scrollFactor * 0.1})`;
     } else {
-        nav.style.background = 'rgba(255, 255, 255, 0.9)';
+        nav.style.background = 'rgba(255, 255, 255, 0.75)';
+        nav.style.backdropFilter = 'blur(20px)';
         nav.style.boxShadow = 'none';
     }
 });
@@ -98,7 +104,7 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.service-card, .solution-card, .testimonial-card, .insight-card, .mission-card').forEach(el => {
+document.querySelectorAll('.service-card, .solution-card, .testimonial-card, .insight-card, .mission-card, .advisor-card, .client-logo').forEach(el => {
     observer.observe(el);
 });
 
