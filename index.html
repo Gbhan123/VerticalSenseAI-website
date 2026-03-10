@@ -44,6 +44,7 @@
     <section id="home" class="hero">
         <div class="hero-shape hero-shape-1"></div>
         <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-grid-pattern"></div>
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -51,7 +52,7 @@
                         Unlock <span class="text-primary">Transformational Value</span> with Verticalized AI
                     </h1>
                     <p class="hero-description">
-                        We deliver verticalized AI and data solutions that are deeply embedded into industry-specific workflows, 
+                        We deliver verticalized AI and data solutions that are deeply embedded into industry-specific workflows,
                         systems, and decision-making processes for enterprises ready to lead their markets.
                     </p>
                     <div class="hero-buttons">
@@ -60,15 +61,72 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <!-- <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
-                         alt="Enterprise AI dashboard showing connected systems and data analytics" 
-                         class="hero-img">
-                    -->
-                    <img src="https://raw.githubusercontent.com/gbhan123/verticalSenseAI-website/main/VS-HeroImage.webp?fit=crop&w=2070&q=80" style="height: 1200px; object-fit: cover;"
-                         alt="Enterprise AI dashboard showing connected systems and data analytics"
-                         class="hero-img">
+                    <div class="hero-visual">
+                        <svg viewBox="0 0 400 400" class="hero-graphic" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background circles -->
+                            <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(0, 217, 255, 0.1)" stroke-width="1"/>
+                            <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(0, 217, 255, 0.15)" stroke-width="1"/>
+                            <circle cx="200" cy="200" r="100" fill="none" stroke="rgba(0, 217, 255, 0.2)" stroke-width="1"/>
+
+                            <!-- Core central node -->
+                            <g class="core-node">
+                                <circle cx="200" cy="200" r="25" fill="rgba(0, 217, 255, 0.3)" stroke="rgba(0, 217, 255, 0.8)" stroke-width="2"/>
+                                <circle cx="200" cy="200" r="15" fill="rgba(0, 217, 255, 0.8)"/>
+                                <circle cx="200" cy="200" r="5" fill="#ffffff"/>
+                            </g>
+
+                            <!-- Connected nodes top -->
+                            <g class="node-group node-1">
+                                <line x1="200" y1="200" x2="200" y2="80" stroke="rgba(0, 217, 255, 0.3)" stroke-width="2"/>
+                                <circle cx="200" cy="80" r="18" fill="rgba(0, 217, 255, 0.2)" stroke="rgba(0, 217, 255, 0.6)" stroke-width="2"/>
+                                <circle cx="200" cy="80" r="8" fill="rgba(0, 217, 255, 0.7)"/>
+                            </g>
+
+                            <!-- Connected nodes right -->
+                            <g class="node-group node-2">
+                                <line x1="200" y1="200" x2="320" y2="200" stroke="rgba(0, 217, 255, 0.3)" stroke-width="2"/>
+                                <circle cx="320" cy="200" r="18" fill="rgba(255, 0, 110, 0.2)" stroke="rgba(255, 0, 110, 0.6)" stroke-width="2"/>
+                                <circle cx="320" cy="200" r="8" fill="rgba(255, 0, 110, 0.7)"/>
+                            </g>
+
+                            <!-- Connected nodes bottom -->
+                            <g class="node-group node-3">
+                                <line x1="200" y1="200" x2="200" y2="320" stroke="rgba(0, 217, 255, 0.3)" stroke-width="2"/>
+                                <circle cx="200" cy="320" r="18" fill="rgba(0, 217, 255, 0.2)" stroke="rgba(0, 217, 255, 0.6)" stroke-width="2"/>
+                                <circle cx="200" cy="320" r="8" fill="rgba(0, 217, 255, 0.7)"/>
+                            </g>
+
+                            <!-- Connected nodes left -->
+                            <g class="node-group node-4">
+                                <line x1="200" y1="200" x2="80" y2="200" stroke="rgba(0, 217, 255, 0.3)" stroke-width="2"/>
+                                <circle cx="80" cy="200" r="18" fill="rgba(255, 0, 110, 0.2)" stroke="rgba(255, 0, 110, 0.6)" stroke-width="2"/>
+                                <circle cx="80" cy="200" r="8" fill="rgba(255, 0, 110, 0.7)"/>
+                            </g>
+
+                            <!-- Diagonal connections -->
+                            <g class="node-group node-5">
+                                <line x1="200" y1="200" x2="280" y2="120" stroke="rgba(0, 217, 255, 0.2)" stroke-width="1.5" stroke-dasharray="5,5"/>
+                                <circle cx="280" cy="120" r="14" fill="rgba(0, 217, 255, 0.15)" stroke="rgba(0, 217, 255, 0.5)" stroke-width="1.5"/>
+                            </g>
+
+                            <g class="node-group node-6">
+                                <line x1="200" y1="200" x2="280" y2="280" stroke="rgba(0, 217, 255, 0.2)" stroke-width="1.5" stroke-dasharray="5,5"/>
+                                <circle cx="280" cy="280" r="14" fill="rgba(0, 217, 255, 0.15)" stroke="rgba(0, 217, 255, 0.5)" stroke-width="1.5"/>
+                            </g>
+
+                            <g class="node-group node-7">
+                                <line x1="200" y1="200" x2="120" y2="120" stroke="rgba(0, 217, 255, 0.2)" stroke-width="1.5" stroke-dasharray="5,5"/>
+                                <circle cx="120" cy="120" r="14" fill="rgba(0, 217, 255, 0.15)" stroke="rgba(0, 217, 255, 0.5)" stroke-width="1.5"/>
+                            </g>
+
+                            <g class="node-group node-8">
+                                <line x1="200" y1="200" x2="120" y2="280" stroke="rgba(0, 217, 255, 0.2)" stroke-width="1.5" stroke-dasharray="5,5"/>
+                                <circle cx="120" cy="280" r="14" fill="rgba(0, 217, 255, 0.15)" stroke="rgba(0, 217, 255, 0.5)" stroke-width="1.5"/>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
-            
+
             </div>
         </div>
     </section>
