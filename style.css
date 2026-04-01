@@ -746,7 +746,7 @@ p {
     padding: 1rem;
     border-radius: 1rem;
     background: rgba(0, 217, 255, 0.03);
-    border: 1px solid rgba(0, 217, 255, 0.15);
+    border: 0px solid rgba(0, 217, 255, 0.15);
     transition: all var(--transition-smooth);
     filter: brightness(0.8);
 }
