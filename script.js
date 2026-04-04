@@ -42,11 +42,11 @@ window.addEventListener('scroll', function() {
 
     if (scrolled > 50) {
         const blurAmount = 20 + (scrollFactor * 10);
-        nav.style.background = `rgba(255, 255, 255, ${0.75 + scrollFactor * 0.2})`;
+        nav.style.background = `rgba(10, 14, 39, ${0.85 + scrollFactor * 0.1})`;
         nav.style.backdropFilter = `blur(${blurAmount}px)`;
-        nav.style.boxShadow = `0 2px ${20 + scrollFactor * 10}px rgba(59, 130, 246, ${0.08 + scrollFactor * 0.1})`;
+        nav.style.boxShadow = `0 2px ${20 + scrollFactor * 10}px rgba(0, 217, 255, ${0.05 + scrollFactor * 0.08})`;
     } else {
-        nav.style.background = 'rgba(255, 255, 255, 0.75)';
+        nav.style.background = 'rgba(10, 14, 39, 0.8)';
         nav.style.backdropFilter = 'blur(20px)';
         nav.style.boxShadow = 'none';
     }
@@ -104,7 +104,7 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.service-card, .solution-card, .testimonial-card, .insight-card, .mission-card, .advisor-card, .client-logo').forEach(el => {
+document.querySelectorAll('.service-card, .solution-card, .testimonial-card, .insight-card, .mission-card, .advisor-card, .client-logo, .section-header').forEach(el => {
     observer.observe(el);
 });
 
