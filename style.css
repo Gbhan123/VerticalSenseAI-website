@@ -723,41 +723,74 @@ p {
     pointer-events: none;
 }
 
-.clients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 2rem;
-    align-items: center;
-    justify-items: center;
+/* ── Clients ticker (marquee) ────────────────────────────────────────── */
+.clients-ticker {
+    overflow: hidden;
+    padding: 0.5rem 0 2.5rem;
     position: relative;
-    z-index: 1;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
 }
 
-.client-logo {
+.clients-track {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: max-content;
+    animation: ticker-scroll 30s linear infinite;
+}
+
+.clients-ticker:hover .clients-track {
+    animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.ticker-item {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
-    padding: 1rem;
-    border-radius: 1rem;
-    background: rgba(0, 217, 255, 0.03);
-    border: none;
-    transition: all var(--transition-smooth);
-    filter: grayscale(30%) brightness(0.85);
+    padding: 0.75rem 1.5rem;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 0.75rem;
+    filter: grayscale(30%) brightness(0.8);
+    opacity: 0.72;
+    transition: all 0.3s ease;
+    cursor: default;
 }
 
-.client-logo:hover {
+.ticker-item:hover {
     filter: grayscale(0%) brightness(1.05);
-    background: rgba(0, 217, 255, 0.08);
+    opacity: 1;
     border-color: rgba(0, 217, 255, 0.3);
-    transform: scale(1.07);
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+    background: rgba(0, 217, 255, 0.06);
+    box-shadow: 0 0 18px rgba(0, 217, 255, 0.15);
 }
 
-.client-logo img {
-    max-width: 90%;
-    max-height: 90%;
+.ticker-item img {
+    height: 36px;
+    width: auto;
+    max-width: 120px;
     object-fit: contain;
+    display: block;
 }
 
 .mission {
@@ -1654,9 +1687,7 @@ p {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .clients-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /* clients now uses ticker — no grid override needed */
 
     .contact-content {
         grid-template-columns: 1fr;
