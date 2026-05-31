@@ -723,74 +723,40 @@ p {
     pointer-events: none;
 }
 
-/* ── Clients ticker (marquee) ────────────────────────────────────────── */
+/* ── Clients logo row (static, greyscale) ────────────────────────────── */
 .clients-ticker {
-    overflow: hidden;
     padding: 0.5rem 0 2.5rem;
-    position: relative;
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 10%,
-        black 90%,
-        transparent 100%
-    );
-    mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 10%,
-        black 90%,
-        transparent 100%
-    );
 }
 
 .clients-track {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    width: max-content;
-    animation: ticker-scroll 30s linear infinite;
-}
-
-.clients-ticker:hover .clients-track {
-    animation-play-state: paused;
-}
-
-@keyframes ticker-scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
 }
 
 .ticker-item {
-    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.5rem;
-    height: 64px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 0.75rem;
-    filter: grayscale(30%) brightness(0.8);
-    opacity: 0.72;
-    transition: all 0.3s ease;
-    cursor: default;
-}
-
-.ticker-item:hover {
-    filter: grayscale(0%) brightness(1.05);
-    opacity: 1;
-    border-color: rgba(0, 217, 255, 0.3);
-    background: rgba(0, 217, 255, 0.06);
-    box-shadow: 0 0 18px rgba(0, 217, 255, 0.15);
+    flex-shrink: 0;
 }
 
 .ticker-item img {
-    height: 36px;
+    height: 54px;
     width: auto;
-    max-width: 120px;
+    max-width: 140px;
     object-fit: contain;
     display: block;
+    filter: grayscale(100%) brightness(0.75);
+    opacity: 0.8;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.ticker-item img:hover {
+    opacity: 1;
+    filter: grayscale(100%) brightness(1);
 }
 
 .mission {
