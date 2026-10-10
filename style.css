@@ -1580,6 +1580,45 @@ p {
     object-fit: cover;
 }
 
+/* Tighten the desktop nav on tablet widths so all links fit on one line */
+@media (min-width: 769px) and (max-width: 1100px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.875rem;
+    }
+
+    .nav-menu .btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .nav-logo {
+        font-size: 1.25rem;
+    }
+
+    .nav-menu a {
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 900px) {
+    .nav-menu {
+        gap: 0.75rem;
+    }
+
+    .nav-link,
+    .nav-menu .btn {
+        font-size: 0.8rem;
+    }
+
+    .nav-logo {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;

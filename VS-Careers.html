@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at VerticalSense.ai – AI, Engineering and Architecture Roles</title>
+    <meta name="description" content="Join VerticalSense.ai to build production AI agents and data products for banking, insurance, healthcare and professional services. Open roles in AI engineering, full stack, backend, cloud DevOps and agent architecture.">
+    <meta property="og:title" content="Careers at VerticalSense.ai – AI, Engineering and Architecture Roles">
+    <meta property="og:description" content="We are hiring engineers and architects who want to ship production AI, not demos. Five open roles across Singapore, India and the USA.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://verticalsense.ai/VS-Careers.html">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .careers-hero {
+            padding: 8rem 0 4rem;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .careers-hero h1 {
+            font-size: clamp(2.1rem, 7vw, 3.25rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .careers-hero-intro {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 760px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .careers-section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .careers-section--alt {
+            background: var(--bg-darker);
+        }
+
+        .careers-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .careers-why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .careers-why-grid .value-prop {
+            margin-bottom: 0;
+            padding: 2rem;
+        }
+
+        .careers-why-grid h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Role cards (native details/summary) */
+        .careers-roles {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .careers-role {
+            background: var(--surface);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-radius: 1rem;
+            transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+            scroll-margin-top: 5.5rem;
+        }
+
+        .careers-role:hover,
+        .careers-role[open] {
+            border-color: rgba(0, 217, 255, 0.35);
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.12);
+        }
+
+        .careers-role summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.75rem 2rem;
+            border-radius: 1rem;
+        }
+
+        .careers-role summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .careers-role summary:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .careers-role-head {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .careers-role-head h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .careers-role-summary {
+            display: block;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .careers-role-meta {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 0.02em;
+        }
+
+        .careers-role-toggle {
+            flex-shrink: 0;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            background: rgba(0, 217, 255, 0.08);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform var(--transition-smooth);
+        }
+
+        .careers-role[open] .careers-role-toggle {
+            transform: rotate(45deg);
+        }
+
+        .careers-role-body {
+            padding: 0 2rem 2rem;
+            border-top: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        .careers-role-body h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin: 2rem 0 0.75rem;
+        }
+
+        .careers-list {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .careers-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .careers-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .careers-apply {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem 1.5rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        .careers-apply p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .careers-email {
+            color: var(--text-primary);
+            font-weight: 600;
+            user-select: all;
+            -webkit-user-select: all;
+            overflow-wrap: anywhere;
+        }
+
+        /* How to apply */
+        .careers-howto {
+            max-width: 760px;
+            margin: 0 auto;
+            background: rgba(0, 217, 255, 0.05);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-radius: 1rem;
+            padding: 2.5rem;
+        }
+
+        .careers-howto strong {
+            color: var(--text-primary);
+        }
+
+        .careers-email-box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding: 1rem 1.25rem;
+            background: var(--bg-dark);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 0.75rem;
+        }
+
+        .careers-email-box .careers-email {
+            font-size: 1.1rem;
+            flex: 1 1 auto;
+            overflow-wrap: normal;
+        }
+
+        .careers-copy-btn {
+            padding: 0.65rem 1.25rem;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .careers-closing {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .careers-closing a,
+        .careers-howto a {
+            color: var(--primary);
+        }
+
+        .careers-eeo {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+        }
+
+        .careers-sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 480px) {
+            .careers-hero {
+                padding: 6.5rem 0 3rem;
+            }
+
+            .careers-hero-intro {
+                font-size: 1.05rem;
+            }
+
+            .careers-section {
+                padding: 3.5rem 0;
+            }
+
+            .careers-role summary {
+                padding: 1.25rem;
+            }
+
+            .careers-role-head h3 {
+                font-size: 1.25rem;
+            }
+
+            .careers-role-body {
+                padding: 0 1.25rem 1.5rem;
+            }
+
+            .careers-howto {
+                padding: 1.5rem;
+            }
+
+            .careers-apply .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <a href="index.html" class="nav-logo">VerticalSense.ai</a>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#riscos" class="nav-link">Products <span class="nav-new-badge">New</span></a>
+                    <a href="index.html#solutions" class="nav-link">Industries</a>
+                    <a href="index.html#insights" class="nav-link">Insights</a>
+                    <a href="VS-AboutUS.html" class="nav-link">About</a>
+                    <a href="VS-Careers.html" class="nav-link" style="color: var(--primary);" aria-current="page">Careers</a>
+                    <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- Page Hero -->
+    <section class="careers-hero">
+        <div style="position: absolute; top: -100px; right: -50px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,217,255,0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none;"></div>
+        <div style="position: absolute; bottom: -80px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,0,110,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none;"></div>
+        <div class="container" style="position: relative; z-index: 1; text-align: center;">
+            <div class="hero-badge" style="justify-content: center;">
+                <span class="hero-badge-dot"></span>
+                Careers
+            </div>
+            <h1>
+                Build vertical AI that <span class="text-primary">enterprises run on</span>
+            </h1>
+            <p class="careers-hero-intro">
+                VerticalSense.ai builds AI agents and data products that live inside industry workflows in banking, insurance, healthcare and professional services. That includes RiskOS, our AI-native risk intelligence platform, and Voice Agents. We are hiring engineers and architects who want to ship production AI, not demos.
+            </p>
+            <a href="#open-roles" class="btn btn-primary btn-lg">See open roles</a>
+        </div>
+    </section>
+
+    <!-- Why VerticalSense -->
+    <section class="careers-section" aria-labelledby="why-heading">
+        <div class="container">
+            <div class="careers-heading">
+                <h2 class="section-title" id="why-heading">Why VerticalSense</h2>
+            </div>
+            <div class="careers-why-grid">
+                <div class="value-prop">
+                    <h3>Products and clients, both.</h3>
+                    <p class="small-text">You will work on our own products, RiskOS and Voice Agents, and on solutions for enterprise clients.</p>
+                </div>
+                <div class="value-prop">
+                    <h3>Depth over breadth.</h3>
+                    <p class="small-text">We go deep into one industry's data, rules and workflows instead of building generic tools.</p>
+                </div>
+                <div class="value-prop">
+                    <h3>Ownership.</h3>
+                    <p class="small-text">You will design, build and ship, and see your work used.</p>
+                </div>
+                <div class="value-prop">
+                    <h3>Experienced leadership.</h3>
+                    <p class="small-text">Our founders and advisors have led AI, data and risk programmes at global banks and Fortune 500 companies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open roles -->
+    <section class="careers-section careers-section--alt" id="open-roles" aria-labelledby="roles-heading" style="scroll-margin-top: 4rem;">
+        <div class="container">
+            <div class="careers-heading">
+                <h2 class="section-title" id="roles-heading">Open roles</h2>
+            </div>
+
+            <div class="careers-roles">
+
+                <!-- 1. AI Engineer -->
+                <details class="careers-role" id="ai-engineer">
+                    <summary>
+                        <span class="careers-role-head">
+                            <h3>AI Engineer</h3>
+                            <span class="careers-role-summary">Build the multi-agent systems, RAG pipelines and guardrails behind our products and client solutions.</span>
+                            <span class="careers-role-meta">Singapore · India · USA · Full-time · 3+ years' experience</span>
+                        </span>
+                        <span class="careers-role-toggle" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </summary>
+                    <div class="careers-role-body">
+                        <h4>About the role</h4>
+                        <p>You will build the agentic core of our products and client solutions: multi-agent systems, retrieval pipelines, and the guardrails that make them safe to run in regulated industries. This is a hands-on engineering role. You will take features from prototype to production and be accountable for their accuracy, latency and cost.</p>
+
+                        <h4>What you'll do</h4>
+                        <ul class="careers-list">
+                            <li>Design and build multi-agent systems: orchestration, planning, tool use, memory, agent hand-offs and human-in-the-loop checkpoints.</li>
+                            <li>Build RAG pipelines end to end: document ingestion and parsing, chunking, embeddings, hybrid search, reranking, and answers grounded with citations.</li>
+                            <li>Manage context deliberately: token budgeting, summarisation and compaction, short- and long-term memory, and deciding what each agent sees and when.</li>
+                            <li>Implement guardrails: input and output validation, PII detection and redaction, prompt-injection defences, policy checks and hallucination detection.</li>
+                            <li>Tune for performance: measure and improve accuracy, latency and cost through caching, model routing, streaming and batching, and fine-tune models where prompting is not enough.</li>
+                            <li>Write and maintain prompts as versioned, tested code: system prompts, structured outputs and tool definitions.</li>
+                            <li>Build evaluation suites and tracing so every change is measured before it ships.</li>
+                            <li>Work directly with domain experts in risk, banking and healthcare to turn their workflows into agent behaviour.</li>
+                        </ul>
+
+                        <h4>What you bring</h4>
+                        <ul class="careers-list">
+                            <li>3+ years of software engineering, including at least 1 year shipping LLM-based applications to production.</li>
+                            <li>Strong Python and solid engineering habits: testing, code review, version control and async programming.</li>
+                            <li>Hands-on multi-agent experience with LangGraph, CrewAI, AutoGen, LlamaIndex, the OpenAI Agents SDK or the Claude Agent SDK, or with an orchestration layer you built yourself.</li>
+                            <li>Production RAG experience, including a vector store such as pgvector, Pinecone, Weaviate, Qdrant or Milvus.</li>
+                            <li>Working knowledge of the major LLM APIs (Anthropic, OpenAI, Google) and open-weight models, including tool calling and structured outputs.</li>
+                            <li>Experience with guardrail tooling or patterns, for example Guardrails AI, NeMo Guardrails, Llama Guard or custom validators.</li>
+                            <li>Experience with evaluation and observability tools, for example Ragas, DeepEval, LangSmith, Langfuse or Arize Phoenix.</li>
+                            <li>Fine-tuning experience (LoRA/PEFT or provider fine-tuning APIs) and the judgement to know when it is worth doing.</li>
+                        </ul>
+
+                        <h4>Nice to have</h4>
+                        <ul class="careers-list">
+                            <li>Model Context Protocol (MCP) servers and tool integration.</li>
+                            <li>Voice AI: speech-to-text, text-to-speech and real-time conversational pipelines.</li>
+                            <li>Knowledge graphs or GraphRAG.</li>
+                            <li>Experience in banking, insurance or healthcare.</li>
+                        </ul>
+
+                        <div class="careers-apply">
+                            <a class="btn btn-primary" href="mailto:careers@verticalsense.ai?subject=Application%20%E2%80%93%20AI%20Engineer&amp;body=Hi%20VerticalSense%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20apply%20for%20the%20AI%20Engineer%20role.%20My%20CV%20is%20attached.%0D%0A%0D%0AName%3A%0D%0ACurrent%20location%3A%0D%0ALinkedIn%20%2F%20GitHub%20%2F%20portfolio%3A%0D%0ANotice%20period%3A%0D%0A">Apply for this role</a>
+                            <p>Or email <span class="careers-email">careers@verticalsense.ai</span> directly. Please attach your CV.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 2. Full Stack Engineer -->
+                <details class="careers-role" id="full-stack-engineer">
+                    <summary>
+                        <span class="careers-role-head">
+                            <h3>Full Stack Engineer</h3>
+                            <span class="careers-role-summary">Build the product experiences people use to work with our AI, and the APIs behind them.</span>
+                            <span class="careers-role-meta">Singapore · India · USA · Full-time · 3+ years' experience</span>
+                        </span>
+                        <span class="careers-role-toggle" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </summary>
+                    <div class="careers-role-body">
+                        <h4>About the role</h4>
+                        <p>You will build the interfaces people use to work with our AI: RiskOS dashboards, agent workspaces and client-facing applications, along with the services behind them. You will work across the stack and own features from design hand-off to production.</p>
+
+                        <h4>What you'll do</h4>
+                        <ul class="careers-list">
+                            <li>Build responsive, accessible web applications in React and TypeScript.</li>
+                            <li>Design and build the APIs and services behind them in Node.js or Python.</li>
+                            <li>Build AI-native interfaces: streaming chat, agent activity and step traces, citations, feedback capture and human-approval flows.</li>
+                            <li>Build data-heavy dashboards and visualisations for risk and portfolio analytics.</li>
+                            <li>Implement authentication and authorisation, including single sign-on and role-based access for enterprise customers.</li>
+                            <li>Own quality: unit, integration and end-to-end tests, performance and monitoring.</li>
+                            <li>Work closely with AI engineers, backend engineers and designers to turn model capabilities into usable product.</li>
+                        </ul>
+
+                        <h4>What you bring</h4>
+                        <ul class="careers-list">
+                            <li>3+ years building and shipping web applications across frontend and backend.</li>
+                            <li>Frontend: React, Next.js, TypeScript, HTML and CSS, Tailwind or equivalent, plus state and data-fetching libraries such as TanStack Query, Redux or Zustand.</li>
+                            <li>Backend: Node.js (Express or NestJS) or Python (FastAPI or Django), with REST and GraphQL API design.</li>
+                            <li>Data: PostgreSQL and data modelling, Redis, and an ORM such as Prisma or SQLAlchemy.</li>
+                            <li>Real-time: WebSockets and server-sent events.</li>
+                            <li>Auth: OAuth 2.0, OpenID Connect, SAML SSO, JWT and role-based access control.</li>
+                            <li>Testing: Jest or Vitest, and Playwright or Cypress.</li>
+                            <li>Docker, Git, CI/CD, and comfort deploying on AWS, Azure or GCP.</li>
+                            <li>Web fundamentals: performance (Core Web Vitals), accessibility (WCAG) and security (OWASP Top 10).</li>
+                        </ul>
+
+                        <h4>Nice to have</h4>
+                        <ul class="careers-list">
+                            <li>Data visualisation libraries such as D3, ECharts or Recharts.</li>
+                            <li>Experience integrating LLM APIs or building chat and agent interfaces.</li>
+                            <li>Design systems and component libraries.</li>
+                            <li>Multi-tenant enterprise SaaS experience.</li>
+                        </ul>
+
+                        <div class="careers-apply">
+                            <a class="btn btn-primary" href="mailto:careers@verticalsense.ai?subject=Application%20%E2%80%93%20Full%20Stack%20Engineer&amp;body=Hi%20VerticalSense%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20apply%20for%20the%20Full%20Stack%20Engineer%20role.%20My%20CV%20is%20attached.%0D%0A%0D%0AName%3A%0D%0ACurrent%20location%3A%0D%0ALinkedIn%20%2F%20GitHub%20%2F%20portfolio%3A%0D%0ANotice%20period%3A%0D%0A">Apply for this role</a>
+                            <p>Or email <span class="careers-email">careers@verticalsense.ai</span> directly. Please attach your CV.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 3. Backend Engineer -->
+                <details class="careers-role" id="backend-engineer">
+                    <summary>
+                        <span class="careers-role-head">
+                            <h3>Backend Engineer</h3>
+                            <span class="careers-role-summary">Build the services, APIs and data pipelines our products and agents run on.</span>
+                            <span class="careers-role-meta">Singapore · India · USA · Full-time · 3+ years' experience</span>
+                        </span>
+                        <span class="careers-role-toggle" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </summary>
+                    <div class="careers-role-body">
+                        <h4>About the role</h4>
+                        <p>You will build the microservices, APIs and data pipelines behind our products and agents. They have to be secure, observable and fast, and they have to integrate with the enterprise systems our customers already run.</p>
+
+                        <h4>What you'll do</h4>
+                        <ul class="careers-list">
+                            <li>Design, build and operate microservices and APIs (REST and gRPC).</li>
+                            <li>Design data models and storage layers across relational and non-relational stores.</li>
+                            <li>Build event-driven and asynchronous workflows: queues, streams, background workers and schedulers.</li>
+                            <li>Build ingestion and integration pipelines from enterprise systems such as core banking, ERP, CRM and data warehouses.</li>
+                            <li>Build the backend for AI workloads: streaming responses, long-running agent jobs, rate limiting, retries, idempotency and usage and cost tracking.</li>
+                            <li>Implement multi-tenancy, authentication, authorisation, encryption and audit logging for regulated customers.</li>
+                            <li>Instrument services with logs, metrics and traces, and own their reliability and performance in production.</li>
+                        </ul>
+
+                        <h4>What you bring</h4>
+                        <ul class="careers-list">
+                            <li>3+ years of backend engineering on production systems.</li>
+                            <li>Strength in at least one of Python (FastAPI), Go, Java (Spring Boot) or Node.js (TypeScript).</li>
+                            <li>API design: REST, gRPC, OpenAPI, versioning, pagination and idempotency.</li>
+                            <li>PostgreSQL in depth (schema design, indexing, query tuning, migrations), Redis, and a NoSQL store such as MongoDB or DynamoDB.</li>
+                            <li>Messaging and streaming with Kafka, RabbitMQ, SQS or Pub/Sub, and task or workflow engines such as Celery or Temporal.</li>
+                            <li>Distributed-systems fundamentals: consistency, caching, concurrency and failure handling.</li>
+                            <li>Security: OAuth 2.0 and OpenID Connect, JWT, role-based access control, secrets management, and encryption in transit and at rest.</li>
+                            <li>Observability: OpenTelemetry, structured logging, metrics and tracing.</li>
+                            <li>Docker, Kubernetes basics, CI/CD, and automated testing (unit, integration, contract and load).</li>
+                        </ul>
+
+                        <h4>Nice to have</h4>
+                        <ul class="careers-list">
+                            <li>Vector search (pgvector or a vector database) and experience serving LLM-backed features.</li>
+                            <li>Data engineering tools such as Airflow, dbt, Spark, Snowflake or Databricks.</li>
+                            <li>Experience with financial-services systems and their compliance requirements.</li>
+                        </ul>
+
+                        <div class="careers-apply">
+                            <a class="btn btn-primary" href="mailto:careers@verticalsense.ai?subject=Application%20%E2%80%93%20Backend%20Engineer&amp;body=Hi%20VerticalSense%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20apply%20for%20the%20Backend%20Engineer%20role.%20My%20CV%20is%20attached.%0D%0A%0D%0AName%3A%0D%0ACurrent%20location%3A%0D%0ALinkedIn%20%2F%20GitHub%20%2F%20portfolio%3A%0D%0ANotice%20period%3A%0D%0A">Apply for this role</a>
+                            <p>Or email <span class="careers-email">careers@verticalsense.ai</span> directly. Please attach your CV.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 4. Cloud DevOps Engineer -->
+                <details class="careers-role" id="cloud-devops-engineer">
+                    <summary>
+                        <span class="careers-role-head">
+                            <h3>Cloud DevOps Engineer</h3>
+                            <span class="careers-role-summary">Own the cloud platform our products and client deployments run on.</span>
+                            <span class="careers-role-meta">Singapore · India · USA · Full-time · 4+ years' experience</span>
+                        </span>
+                        <span class="careers-role-toggle" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </summary>
+                    <div class="careers-role-body">
+                        <h4>About the role</h4>
+                        <p>You will own the cloud platform behind our products and client deployments: infrastructure as code, CI/CD, Kubernetes, observability, security and cost. Many of our customers are regulated enterprises, so you will also deploy into their cloud environments and meet their security requirements.</p>
+
+                        <h4>What you'll do</h4>
+                        <ul class="careers-list">
+                            <li>Design, provision and manage cloud infrastructure as code.</li>
+                            <li>Build and maintain CI/CD pipelines that make releases fast, repeatable and safe to roll back.</li>
+                            <li>Run containerised workloads on Kubernetes, including scaling, upgrades, networking and ingress.</li>
+                            <li>Build observability: metrics, logs, traces, dashboards, alerts and service-level objectives.</li>
+                            <li>Secure the platform: least-privilege IAM, network segmentation, secrets management, image and dependency scanning, and audit trails.</li>
+                            <li>Deploy into customer environments, including private VPC or VNet and single-tenant setups with data-residency requirements.</li>
+                            <li>Run AI workloads: model gateways, GPU node pools, model serving, vector databases, and LLM usage and cost monitoring.</li>
+                            <li>Own reliability and cost: backups, disaster recovery, incident response, post-incident reviews and cloud spend.</li>
+                        </ul>
+
+                        <h4>What you bring</h4>
+                        <ul class="careers-list">
+                            <li>4+ years in DevOps, site reliability or platform engineering.</li>
+                            <li>Deep experience with at least one of AWS, Azure or GCP, and working knowledge of a second.</li>
+                            <li>Infrastructure as code with Terraform, OpenTofu or Pulumi.</li>
+                            <li>Kubernetes in production (EKS, AKS or GKE), Helm and Docker.</li>
+                            <li>CI/CD with GitHub Actions, GitLab CI or Azure DevOps, and GitOps with Argo CD or Flux.</li>
+                            <li>Observability with Prometheus, Grafana, OpenTelemetry, and ELK, Loki or Datadog.</li>
+                            <li>Security: IAM, cloud networking, HashiCorp Vault or cloud secret managers and KMS, scanning with Trivy or Snyk, and policy as code with OPA.</li>
+                            <li>Scripting in Python and Bash.</li>
+                            <li>Strong Linux and networking fundamentals: DNS, TLS and load balancing.</li>
+                            <li>Familiarity with SOC 2 and ISO 27001 controls.</li>
+                        </ul>
+
+                        <h4>Nice to have</h4>
+                        <ul class="careers-list">
+                            <li>GPU infrastructure and model serving with vLLM, Triton or KServe.</li>
+                            <li>Managed AI platforms: Amazon Bedrock, Azure OpenAI or Vertex AI.</li>
+                            <li>FinOps and cloud cost optimisation.</li>
+                            <li>Cloud or Kubernetes certifications (AWS, Azure, GCP, CKA).</li>
+                            <li>Experience meeting financial-services infrastructure and security requirements.</li>
+                        </ul>
+
+                        <div class="careers-apply">
+                            <a class="btn btn-primary" href="mailto:careers@verticalsense.ai?subject=Application%20%E2%80%93%20Cloud%20DevOps%20Engineer&amp;body=Hi%20VerticalSense%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20apply%20for%20the%20Cloud%20DevOps%20Engineer%20role.%20My%20CV%20is%20attached.%0D%0A%0D%0AName%3A%0D%0ACurrent%20location%3A%0D%0ALinkedIn%20%2F%20GitHub%20%2F%20portfolio%3A%0D%0ANotice%20period%3A%0D%0A">Apply for this role</a>
+                            <p>Or email <span class="careers-email">careers@verticalsense.ai</span> directly. Please attach your CV.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 5. AI / Agent Architect -->
+                <details class="careers-role" id="ai-agent-architect">
+                    <summary>
+                        <span class="careers-role-head">
+                            <h3>AI / Agent Architect</h3>
+                            <span class="careers-role-summary">Set the technical direction for our agentic systems and lead their design for enterprise clients.</span>
+                            <span class="careers-role-meta">Singapore · India · USA · Full-time · 8+ years' experience</span>
+                        </span>
+                        <span class="careers-role-toggle" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </summary>
+                    <div class="careers-role-body">
+                        <h4>About the role</h4>
+                        <p>You will set the technical direction for our agentic systems across RiskOS, Voice Agents and client engagements. You will design architectures that are reliable, explainable and governable enough for banks, insurers and healthcare companies, lead their delivery, and be the senior technical voice in front of clients.</p>
+
+                        <h4>What you'll do</h4>
+                        <ul class="careers-list">
+                            <li>Define reference architectures for multi-agent systems: orchestration patterns (supervisor, router, planner-executor), memory, tool use and agent-to-agent communication.</li>
+                            <li>Design the knowledge layer: RAG, knowledge graphs, enterprise data integration and context-engineering strategy.</li>
+                            <li>Set model strategy: model selection and routing, when to use prompting, retrieval or fine-tuning, and hosted versus self-hosted models, weighed against accuracy, latency, cost and data privacy.</li>
+                            <li>Design guardrails, governance and explainability: human oversight, audit trails, model risk management and responsible-AI controls.</li>
+                            <li>Define the evaluation strategy and the quality bar a system must meet before release.</li>
+                            <li>Design security for AI systems: prompt-injection defences, data-leakage prevention, and access control for tools and data.</li>
+                            <li>Lead client discovery and solution design: run workshops with senior stakeholders and turn business problems into architectures, estimates and roadmaps.</li>
+                            <li>Guide and review the work of AI, backend and platform engineers, make build-versus-buy decisions, and mentor the team.</li>
+                        </ul>
+
+                        <h4>What you bring</h4>
+                        <ul class="careers-list">
+                            <li>8+ years in software, data or ML engineering, including 3+ years in an architecture or technical-leadership role and 2+ years designing LLM-based systems that reached production.</li>
+                            <li>A track record of agentic or multi-agent systems running in production, not only prototypes.</li>
+                            <li>Deep knowledge of LLMs, agent frameworks (LangGraph, AutoGen, CrewAI, Semantic Kernel) and agent protocols (MCP, A2A).</li>
+                            <li>RAG and knowledge architecture: vector databases, hybrid search, knowledge graphs and data governance.</li>
+                            <li>Distributed-systems and cloud architecture: microservices, event-driven design, and AWS, Azure or GCP.</li>
+                            <li>LLMOps: evaluation, observability, prompt and model versioning, and cost management.</li>
+                            <li>AI governance and security: OWASP Top 10 for LLM Applications, NIST AI Risk Management Framework, ISO/IEC 42001, and awareness of the EU AI Act.</li>
+                            <li>Still hands-on: able to prototype and review code in Python.</li>
+                            <li>Clear communication with engineers and executives, and strong written architecture documentation.</li>
+                        </ul>
+
+                        <h4>Nice to have</h4>
+                        <ul class="careers-list">
+                            <li>Financial-services risk domain knowledge: Basel, IFRS 9, and model risk management (SR 11-7).</li>
+                            <li>Voice AI architecture.</li>
+                            <li>Consulting or pre-sales experience.</li>
+                            <li>Talks, publications or open-source contributions in AI.</li>
+                        </ul>
+
+                        <div class="careers-apply">
+                            <a class="btn btn-primary" href="mailto:careers@verticalsense.ai?subject=Application%20%E2%80%93%20AI%20%2F%20Agent%20Architect&amp;body=Hi%20VerticalSense%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20apply%20for%20the%20AI%20%2F%20Agent%20Architect%20role.%20My%20CV%20is%20attached.%0D%0A%0D%0AName%3A%0D%0ACurrent%20location%3A%0D%0ALinkedIn%20%2F%20GitHub%20%2F%20portfolio%3A%0D%0ANotice%20period%3A%0D%0A">Apply for this role</a>
+                            <p>Or email <span class="careers-email">careers@verticalsense.ai</span> directly. Please attach your CV.</p>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- How to apply -->
+    <section class="careers-section" id="how-to-apply" aria-labelledby="apply-heading">
+        <div class="container">
+            <div class="careers-heading">
+                <h2 class="section-title" id="apply-heading">How to apply</h2>
+            </div>
+            <div class="careers-howto">
+                <p>Email your CV to <strong>careers@verticalsense.ai</strong> with the subject line &ldquo;Application &ndash; [Role Title]&rdquo;. In your email, please include:</p>
+                <ul class="careers-list">
+                    <li>A link to your LinkedIn, GitHub or portfolio.</li>
+                    <li>Two or three lines about something you built that is relevant to the role.</li>
+                    <li>Your current location and notice period.</li>
+                </ul>
+                <p style="margin-bottom: 0;">We read every application and will get back to you if there is a match.</p>
+
+                <div class="careers-email-box">
+                    <a href="mailto:careers@verticalsense.ai" class="careers-email" style="color: var(--text-primary); text-decoration: none;">careers@verticalsense.ai</a>
+                    <button type="button" class="btn btn-outline careers-copy-btn" id="copyEmailBtn" data-email="careers@verticalsense.ai" hidden>Copy email</button>
+                    <span class="careers-sr-only" id="copyEmailStatus" aria-live="polite"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="careers-section careers-section--alt">
+        <div class="container">
+            <div class="careers-closing">
+                <p style="font-size: 1.15rem;">Don't see your role? If you think you can help us build vertical AI, write to us at <a href="mailto:careers@verticalsense.ai">careers@verticalsense.ai</a> and tell us how.</p>
+                <p class="careers-eeo">VerticalSense.ai is an equal opportunity employer. We welcome applicants of every background and make hiring decisions based on skills and experience.</p>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3 class="footer-title">VerticalSense.ai</h3>
+                    <p class="footer-description">
+                        Transforming enterprises through verticalized AI solutions that deliver measurable, outcome-driven value.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/verticalsense-ai/posts/?feedView=all" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#services">Strategy</a></li>
+                        <li><a href="index.html#services">Solutions</a></li>
+                        <li><a href="index.html#services">Scale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Industries</h4>
+                    <ul>
+                        <li><a href="index.html#solutions">Healthcare</a></li>
+                        <li><a href="index.html#solutions">Financial Services</a></li>
+                        <li><a href="index.html#solutions">Professional Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="index.html#riscos">RiskOS <span class="footer-new-tag">New</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="VS-AboutUS.html">About Us</a></li>
+                        <li><a href="VS-Careers.html">Careers</a></li>
+                        <li><a href="index.html#leadership">Leadership</a></li>
+                        <li><a href="index.html#advisors">Advisors</a></li>
+                        <li><a href="index.html#insights">Insights</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VerticalSense.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Careers: open a role from the URL hash, keep the hash in sync, copy email
+        (function() {
+            const roles = document.querySelectorAll('details.careers-role');
+
+            function openRoleFromHash() {
+                const id = decodeURIComponent(location.hash.slice(1));
+                const role = id && document.getElementById(id);
+                if (role && role.classList.contains('careers-role')) {
+                    role.open = true;
+                    role.scrollIntoView({ block: 'start' });
+                }
+            }
+
+            roles.forEach(role => {
+                role.addEventListener('toggle', function() {
+                    if (role.open) {
+                        history.replaceState(null, '', '#' + role.id);
+                    } else if (location.hash === '#' + role.id) {
+                        history.replaceState(null, '', location.pathname + location.search);
+                    }
+                });
+            });
+
+            window.addEventListener('hashchange', openRoleFromHash);
+            if (document.readyState === 'complete') {
+                openRoleFromHash();
+            } else {
+                window.addEventListener('load', openRoleFromHash);
+            }
+
+            const copyBtn = document.getElementById('copyEmailBtn');
+            const copyStatus = document.getElementById('copyEmailStatus');
+            if (copyBtn) {
+                copyBtn.hidden = false;
+                copyBtn.addEventListener('click', function() {
+                    const email = copyBtn.dataset.email;
+                    const done = () => {
+                        copyBtn.textContent = 'Copied!';
+                        copyStatus.textContent = 'Email address copied to clipboard';
+                        setTimeout(() => {
+                            copyBtn.textContent = 'Copy email';
+                            copyStatus.textContent = '';
+                        }, 2000);
+                    };
+                    const fallback = () => {
+                        const field = document.createElement('textarea');
+                        field.value = email;
+                        field.setAttribute('readonly', '');
+                        field.style.position = 'fixed';
+                        field.style.opacity = '0';
+                        document.body.appendChild(field);
+                        field.select();
+                        try {
+                            document.execCommand('copy');
+                            done();
+                        } catch (e) {
+                            copyStatus.textContent = 'Copy failed. Please select the address and copy it manually.';
+                        }
+                        field.remove();
+                    };
+                    if (navigator.clipboard && window.isSecureContext) {
+                        navigator.clipboard.writeText(email).then(done, fallback);
+                    } else {
+                        fallback();
+                    }
+                });
+            }
+        })();
+    </script>
+
+</body>
+</html>
