@@ -52,8 +52,9 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Contact form handling
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// Contact form handling (only the home page has the form)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
     // Get form data
